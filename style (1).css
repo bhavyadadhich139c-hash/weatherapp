@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#cfd8dc, #90a4ae);
+    background-attachment: fixed;
+}
+
+/* the background changes with the weather (class is set from script.js) */
+body.sunny { background: linear-gradient(#ffd89b, #f4a259); background-attachment: fixed; }
+body.cloudy { background: linear-gradient(#cfd9df, #8e9eab); background-attachment: fixed; }
+body.rain { background: linear-gradient(#7a93a8, #37474f); background-attachment: fixed; }
+body.storm { background: linear-gradient(#59607f, #1f2233); background-attachment: fixed; }
+body.snow { background: linear-gradient(#e3eef7, #a9c3d9); background-attachment: fixed; }
+
+.app {
+    width: 100%;
+    max-width: 520px;
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 30px;
+    color: #2f4858;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* search */
+.search-row {
+    display: flex;
+    gap: 8px;
+}
+
+.search-row input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+}
+
+.search-row input:focus {
+    outline: none;
+    border-color: #2f4858;
+}
+
+button {
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.search-row button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #2f4858;
+    color: white;
+}
+
+.search-row button:hover {
+    background: #1f3340;
+}
+
+.search-row button:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
+/* recent searches + unit buttons */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 12px 0 20px;
+}
+
+#recent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.chip {
+    padding: 4px 12px;
+    font-size: 13px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+.chip:hover {
+    background: #eee;
+}
+
+.unit-toggle {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.unit-toggle button {
+    padding: 4px 10px;
+    font-size: 13px;
+    background: white;
+    border: 1px solid #2f4858;
+    color: #2f4858;
+}
+
+.unit-toggle button:first-child {
+    border-radius: 6px 0 0 6px;
+}
+
+.unit-toggle button:last-child {
+    border-radius: 0 6px 6px 0;
+    border-left: none;
+}
+
+.unit-toggle button.active {
+    background: #2f4858;
+    color: white;
+}
+
+/* result */
+.message {
+    text-align: center;
+    color: #777;
+    padding: 30px 0;
+}
+
+.place h2 {
+    font-size: 24px;
+}
+
+.place p {
+    color: #777;
+}
+
+.now {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 18px 0;
+}
+
+.now-icon {
+    font-size: 64px;
+}
+
+.now-temp {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+.now-text {
+    color: #555;
+    margin-top: 4px;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.detail {
+    background: #f1f4f6;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.detail-name {
+    font-size: 13px;
+    color: #777;
+}
+
+.detail-value {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.section-title {
+    font-size: 15px;
+    margin: 22px 0 10px;
+    color: #2f4858;
+}
+
+.forecast {
+    display: flex;
+    gap: 10px;
+}
+
+.day {
+    flex: 1;
+    text-align: center;
+    padding: 12px 6px;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+}
+
+.day-name {
+    font-size: 14px;
+    color: #555;
+}
+
+.day-icon {
+    font-size: 28px;
+    margin: 6px 0;
+}
+
+.day-temp {
+    font-weight: bold;
+}
+
+.day-temp span {
+    font-weight: normal;
+    color: #888;
+    margin-left: 4px;
+}
+
+.updated {
+    margin-top: 18px;
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+}
+
+@media (max-width: 520px) {
+    .app {
+        padding: 20px;
+    }
+
+    .details {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .now-icon {
+        font-size: 52px;
+    }
+
+    .now-temp {
+        font-size: 40px;
+    }
+}

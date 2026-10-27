@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mausam | Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app">
+
+        <h1>Mausam</h1>
+        <p class="subtitle">Check the weather of any city</p>
+
+        <div class="search-row">
+            <input type="text" id="searchInput" placeholder="Enter city name" aria-label="City name">
+            <button id="searchBtn">Search</button>
+            <button id="locationBtn" title="Use my location">📍</button>
+        </div>
+
+        <div class="options">
+            <div id="recent"></div>
+            <div class="unit-toggle">
+                <button id="celsiusBtn">°C</button>
+                <button id="fahrenheitBtn">°F</button>
+            </div>
+        </div>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
